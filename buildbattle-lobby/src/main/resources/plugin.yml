@@ -1,0 +1,14 @@
+main: es.noobcraft.buildbattle.BuildBattle
+name: BuildBattle
+version: ${project.parent.version}
+author: Brouse_13
+api-version: 1.12
+prefix: BuildBattle
+depend: [Core]
+permissions:
+  noobcraft.builbattle.sign.create:
+    default: true
+    description: Create a builbattle arena
+  noobcraft.builbattle.sign.remove:
+    default: true
+    description: Remove a builbattle arena

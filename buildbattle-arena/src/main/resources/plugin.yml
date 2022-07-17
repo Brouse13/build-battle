@@ -1,0 +1,15 @@
+main: es.noobcraft.buildbattle.BuildBattle
+name: BuildBattle
+version: ${project.parent.version}
+author: Brouse_13
+api-version: 1.12
+prefix: BuildBattle
+depend: [Core]
+commands:
+  buildbattle:
+    description: Main Command
+    aliases: [bb, bbattle]
+permissions:
+  builbattle.arena.edit:
+    default: op
+    description: Edit the  arena

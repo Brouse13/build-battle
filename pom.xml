@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>es.noobcraft</groupId>
+    <artifactId>buildbattle</artifactId>
+    <version>1.4.2</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>buildbattle-core</module>
+        <module>buildbattle-lobby</module>
+        <module>buildbattle-arena</module>
+        <module>buildbattle-api</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spigot.version>1.8.8-R0.1-SNAPSHOT</spigot.version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>enginehub-maven</id>
+            <url>https://maven.enginehub.org/repo/</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://projectlombok.org/setup/maven  -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>3.5.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://hub.spigotmc.org/nexus/content/repositories/snapshots/ -->
+            <dependency>
+                <groupId>org.spigotmc</groupId>
+                <artifactId>spigot-api</artifactId>
+                <version>${spigot.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>es.noobcraft</groupId>
+                <artifactId>core-api</artifactId>
+                <version>0.1.0-SNAPSHOT</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>es.noobcraft</groupId>
+                <artifactId>core-spigot-api</artifactId>
+                <version>0.1.0-SNAPSHOT</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>buildbattle-core</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>buildbattle-api</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>es.noobcraft</groupId>
+                <artifactId>holographic-displays-api</artifactId>
+                <version>2.4.9</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
